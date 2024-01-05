@@ -1,4 +1,4 @@
-const imageList = document.querySelectorAll('.images');
+const imageList = document.querySelectorAll('.item');
 console.log(imageList[0]);
 
 imageList.forEach((image) => {
