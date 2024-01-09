@@ -16,12 +16,10 @@ body {
   justify-content: center;
   align-items: center;
 }
-
 figure {
   position: relative;
   margin: 6px;
 }
-
 .visible {
   visibility: visible;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -41,7 +39,6 @@ figure {
   left: 24px;
   color: white;
   opacity: 0;
- 
 }
 img {
   width: 100%;
@@ -74,7 +71,6 @@ a {
   color: white;
   font-style: italic;
 }
-
 .item {
   border-radius: 20px;
   height: 90vh;

@@ -1,6 +1,5 @@
 const imageList = document.querySelectorAll('.item');
 const header = document.querySelector('.visible');
-console.log(header);
 
 imageList.forEach((image, key) => {
   image.addEventListener('click', () => {
