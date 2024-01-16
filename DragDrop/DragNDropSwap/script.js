@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let items = document.querySelectorAll('.card');
 
   items.forEach((item) => {
-    item.draggable = true;
+    item.setAttribute('draggable', 'true');
     item.addEventListener('dragstart', handleDragStart, false);
     item.addEventListener('dragenter', handleDragEnter, false);
     item.addEventListener('dragover', handleDragOver, false);
