@@ -1,13 +1,12 @@
-document.addEventListener('dragend', DnDSwap);
-function DnDSwap() {
+document.addEventListener('DOMContentLoaded', () => {
   let dragSrcEl = null;
   console.log(dragSrcEl);
   function handleDragStart(e) {
     console.log('drag start');
+    console.log(this);
     dragSrcEl = this;
-
     e.dataTransfer.effectAllowed = 'move';
-    e.dataTransfer.setData('text/html', this.outerHTML);
+    e.dataTransfer.setData('text/html', this.innerHTML);
     this.style.opacity = '0.8';
   }
 
@@ -31,9 +30,8 @@ function DnDSwap() {
   function handleDrop(e) {
     if (dragSrcEl != this) {
       this.style.opacity = '1';
-      dragSrcEl.outerHTML = this.outerHTML;
-      this.outerHTML = e.dataTransfer.getData('text/html');
-
+      dragSrcEl.innerHTML = this.innerHTML;
+      this.innerHTML = e.dataTransfer.getData('text/html');
       console.log('drop');
     }
   }
@@ -43,14 +41,15 @@ function DnDSwap() {
     this.style.opacity = '1';
     console.log(dragSrcEl);
   }
+  let items = document.querySelectorAll('.card');
 
-  let draggableItem = document.querySelector('.draggable');
-  let droppableItem = document.querySelector('.droppable');
-
-  draggableItem.addEventListener('dragstart', handleDragStart, false);
-  droppableItem.addEventListener('dragenter', handleDragEnter, false);
-  droppableItem.addEventListener('dragover', handleDragOver, false);
-  droppableItem.addEventListener('dragleave', handleDragLeave, false);
-  droppableItem.addEventListener('drop', handleDrop, false);
-  draggableItem.addEventListener('dragend', handleDragEnd, false);
-}
+  items.forEach((item) => {
+    item.draggable = true;
+    item.addEventListener('dragstart', handleDragStart, false);
+    item.addEventListener('dragenter', handleDragEnter, false);
+    item.addEventListener('dragover', handleDragOver, false);
+    item.addEventListener('dragleave', handleDragLeave, false);
+    item.addEventListener('drop', handleDrop, false);
+    item.addEventListener('dragend', handleDragEnd, false);
+  });
+});
