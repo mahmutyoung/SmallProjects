@@ -9,3 +9,4 @@ Different Project For Drag And Drop
 The most basic usage of HTML Drag and Drop API.
 -Single Draggable Element
 -Single Droppable Element
+-Data Transfer
