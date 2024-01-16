@@ -1,0 +1,31 @@
+
+body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+.container {
+  display: flex;
+  width: 60%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.draggable-container {
+  width: 300px;
+  height: 300px;
+  border: 5px dashed #ff3434;
+}
+.draggable {
+  width: 300px;
+  height: 300px;
+  background-color: #ff3434;
+  border:1px solid #ff3434;
+  cursor: move;
+}
+
+.droppable {
+  width: 300px;
+  height: 300px;
+  border: 5px dashed #6aff00;
+}
